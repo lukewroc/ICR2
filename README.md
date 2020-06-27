@@ -3,7 +3,7 @@ Project of ink cartridge regeneration service database, which is built on Micros
 ## Database description </br> 
 The project is a relational database written for Microsoft SQL Server 2014, which contains <i>7 tables</i> related to the activity of <b>ink cartridge regeneration service.</b>
 ### table CUSTOMERS data info: </br>
-<img src="https://user-images.githubusercontent.com/59047042/85919795-dbb1d700-b86e-11ea-8d65-c2e4e03cb00f.jpg" width="500" height="400"> </br>
+<img src="https://user-images.githubusercontent.com/59047042/85919795-dbb1d700-b86e-11ea-8d65-c2e4e03cb00f.jpg" width="600" height="300"> </br>
 ### table ORDERS data info </br>
 <img src="https://user-images.githubusercontent.com/59047042/85919856-43682200-b86f-11ea-91c7-1ac98eebec7c.jpg"> </br>
 ### table ORDER_DETAILS data info </br>
