@@ -7,7 +7,7 @@ The project is a relational database written for Microsoft SQL Server 2014, whic
 ### table ORDERS data info </br>
 <img src="https://user-images.githubusercontent.com/59047042/85919856-43682200-b86f-11ea-91c7-1ac98eebec7c.jpg" width="600" height="130"> </br>
 ### table ORDER_DETAILS data info </br>
-<img src="https://user-images.githubusercontent.com/59047042/85919968-1c5e2000-b870-11ea-8368-40cea1e79b9f.jpg" width="600" height="220"> </br> 
+<img src="https://user-images.githubusercontent.com/59047042/85919968-1c5e2000-b870-11ea-8368-40cea1e79b9f.jpg" width="600" height="200"> </br> 
 ### table PRODUCT data info </br>
 <img src="https://user-images.githubusercontent.com/59047042/85920010-75c64f00-b870-11ea-8ec7-5f7289e844f1.jpg" width="600" height="200"> </br> 
 ### table PAYMENTS data info: </br>
