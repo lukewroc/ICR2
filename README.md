@@ -1,7 +1,8 @@
-# Database-project-1.2 [developing in progress] </br> 
+# Ink Cartridge Regeneration [ICR] 2.0 [developing in progress] </br> 
 Project of ink cartridge regeneration service database, which is built on Microsoft SQL Server 2014.  </br> 
-## Database SERVICE 1.2 </br> 
+## Database description </br> 
 The project is a relational database written for Microsoft SQL Server 2014, which contains <i>7 tables</i> related to the activity of <b>ink cartridge regeneration service.</b>
+
 Below you can find main relation diagram. 
 
 ### Diagram
