@@ -248,26 +248,26 @@ Assumptions: </br>
   
 ### 4.1 tb_customers </br>
 
-CREATE TABLE customers 
-(
-id_customers int IDENTITY(1,1) PRIMARY KEY, 
-first_name varchar(255), 
-last_name varchar(255), 
-city varchar(100), 
-street varchar(100), 
-street_number int, 
-apartment_number int
-)
+CREATE TABLE customers </br>
+( </br>
+id_customers int IDENTITY(1,1) PRIMARY KEY, </br>
+first_name varchar(255), </br>
+last_name varchar(255), </br>
+city varchar(100), </br>
+street varchar(100), </br>
+street_number int, </br>
+apartment_number int</br>
+)</br>
 
 ### 4.2 tb_orders </br>
 
-CREATE TABLE orders 
-(
-id_orders int IDENTITY(1,1) PRIMARY KEY,
-id_customer int FOREIGN KEY REFERENCES customers(id_customers), 
-order_date DATETIME, 
-id_recipient_of_order int FOREIGN KEY REFERENCES employees(id_employees)
-)
+CREATE TABLE orders </br>
+(</br>
+id_orders int IDENTITY(1,1) PRIMARY KEY,</br>
+id_customer int FOREIGN KEY REFERENCES customers(id_customers), </br>
+order_date DATETIME, </br>
+id_recipient_of_order int FOREIGN KEY REFERENCES employees(id_employees)</br>
+)</br>
 
 ### 4.3 tb_order_details </br>
 
