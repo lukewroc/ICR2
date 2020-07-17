@@ -63,6 +63,10 @@ Assumptions: </br>
     <td>street_number</td>
     <td>int</td>
   </tr>
+  <tr>
+  <td>apartament</td>
+  <td>int</td>
+  </tr>
   </table> 
 
 ## Main database relations diagram 
