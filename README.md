@@ -339,7 +339,7 @@ pay_way VARCHAR(10)</br>
 
 <b>Desribe:</b> the view shows the current payment status for a given order.
 
-<b>Code:</b>
+<b>Code:</b></br>
 CREATE VIEW payments_status </br>
 AS </br>
 SELECT o.id_orders AS 'ORDER_ID',  </br>
