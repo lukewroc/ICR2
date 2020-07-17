@@ -31,7 +31,7 @@ Assumptions: </br>
 
 - <i>tb_payments:</i> the table contains data on the customer to whom the payment relates, order id, date of payment and its value, as well as the type of payment selected by the customer. </br>
 
-## 3. Columns in a table and their data types </br>
+## 3. Columns in a tables and their data types </br>
 
 ### 3.1 tb_customers </br>
 
