@@ -33,7 +33,37 @@ Assumptions: </br>
 
 ## 3. Columns in a table and their data types </br>
 
-### 3.1
+### 3.1 tb_customers </br>
+
+<table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_customers</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>first_name</td>
+    <td>varchar(255)</td>
+  </tr>
+    <td>last_name</td>
+    <td>varchar(255)</td>
+  </tr>
+  <tr>
+   <td>city</td>
+   <td>varchar(100)</td>
+  </tr>
+  <tr>
+   <td>street</td>
+   <td>varchar(100)</td>
+  </tr>
+  <tr>
+    <td>street_number</td>
+    <td>int</td>
+  </tr>
+  </table> 
 
 ## Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
