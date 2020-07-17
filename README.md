@@ -90,6 +90,31 @@ Assumptions: </br>
   </tr>
  </table>
   
+ ### 3.3 tb_order_details </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_order</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>id_order_details</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>cartridge_quantity</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>id_product_d</td>
+    <td>int, FK</td>
+  </tr>
+ </table>
+  
 
 ## Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
