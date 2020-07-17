@@ -69,7 +69,32 @@ Assumptions: </br>
   </tr>
   </table> 
 
-### 3.2 tb_customers </br>
+### 3.2 tb_orders </br>
+
+<table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_orders</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>id_customer</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>order_date</td>
+    <td>datetime</td>
+  </tr>
+  <tr>
+    <td>id_recipient_of_order</td>
+    <td>int, FK</td>
+  </tr>
+ </table>
+
+### 3.3 tb_ </br>
 
 <table>
   <tr>
@@ -90,7 +115,7 @@ Assumptions: </br>
   </tr>
  </table>
   
- ### 3.3 tb_order_details </br>
+ ### 3.4 tb_order_details </br>
  
  <table>
   <tr>
@@ -115,6 +140,52 @@ Assumptions: </br>
   </tr>
  </table>
   
-
+### 3.5 tb_employees </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_employees</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>e_first_name</td>
+    <td>varchar(50)</td>
+  </tr>
+  <tr>
+    <td>e_last_name</td>
+    <td>varchar(50)</td>
+  </tr>
+ </table>
+  
+  ### 3.6 tb_product </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_products</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>product_code</td>
+    <td>varchar(30)</td>
+  </tr>
+  <tr>
+    <td>ink_color</td>
+    <td>varchar(30)</td>
+  </tr>
+  <tr>
+    <td>price_pcs</td>
+    <td>money</td>
+  </tr>
+ </table>
+  
+  
 ## Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
