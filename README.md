@@ -1,21 +1,18 @@
-# Ink Cartridge Regeneration [ICR] 2.0 [developing in progress] </br> 
+# 1.0 Ink Cartridge Regeneration [ICR] 2.0 </br> 
 Project of ink cartridge regeneration service database, which is built on Microsoft SQL Server 2014.  </br> 
-## Database description </br> 
-The project is a relational database written for Microsoft SQL Server 2014, which contains <i>7 tables</i> related to the activity of <b>ink cartridge regeneration service.</b>
-### table CUSTOMERS data info: </br>
-<img src="https://user-images.githubusercontent.com/59047042/85919795-dbb1d700-b86e-11ea-8d65-c2e4e03cb00f.jpg" width="600" height="300"> </br>
-### table ORDERS data info </br>
-<img src="https://user-images.githubusercontent.com/59047042/85919856-43682200-b86f-11ea-91c7-1ac98eebec7c.jpg" width="600" height="130"> </br>
-### table ORDER_DETAILS data info </br>
-<img src="https://user-images.githubusercontent.com/59047042/85919968-1c5e2000-b870-11ea-8368-40cea1e79b9f.jpg" width="600" height="200"> </br> 
-### table PRODUCT data info </br>
-<img src="https://user-images.githubusercontent.com/59047042/85920010-75c64f00-b870-11ea-8ec7-5f7289e844f1.jpg" width="600" height="200"> </br> 
-### table PAYMENTS data info: </br>
-<img src="https://user-images.githubusercontent.com/59047042/85920050-a3ab9380-b870-11ea-928a-a79f31c1323e.jpg" width="600" height="265"> </br> 
-### table GIVE_AWAY data info: </br>
-<img src="https://user-images.githubusercontent.com/59047042/85920083-0866ee00-b871-11ea-80ab-8583075b05c4.jpg" width="600" height="200"> </br>
-### table PRINTERS data info: </br>
-<img src="https://user-images.githubusercontent.com/59047042/85920104-3ea46d80-b871-11ea-9e59-5a4d083d4d82.jpg" width="600" height="150"> </br>
+### 1.1 Database description </br> 
+The project is a relational database written for Microsoft SQL Server 2014, which contains <i>8 tables</i> related to the activity of <b>ink cartridge regeneration service.</b></br> The service is the regeneration of selected original HP ink cartridges. The database contains information about the customer who places the order, the order and its details, order give away and payment.</br>
+The database provides access to data on: </br>
+- customer data </br>
+- data on the subject of the order placed </br>
+- data on the stock release status of the regenerated carcasses </br>
+- payment details </br>
+
+Assumptions: </br>
+- the complete order is issued no later than 3 days from the date of placing the order </br>
+- payment methods are cash or bank transfer </br>
+- only the types of carcasses from the offer are subject to regeneration (table "product") </br>
+
 
 
 ## Main database relations diagram 
