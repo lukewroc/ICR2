@@ -340,23 +340,23 @@ pay_way VARCHAR(10)</br>
 <b>Desribe:</b> the view shows the current payment status for a given order.
 
 <b>Code:</b>
-CREATE VIEW payments_status
-AS
-SELECT o.id_orders AS 'ORDER_ID', 
-o.order_date AS 'DATE OF ORDER' ,
-p.pay_way AS 'PAY WAY CHOOSEN BY CUSTOMER', 
-	CASE 
-		WHEN pay_way = 'cash' THEN (SELECT order_date FROM orders INNER JOIN payments ON p.id_orders_p = o.id_orders WHERE pay_way = 'cash')
-		ELSE (SELECT DATEADD(DD, 7, give_away_date) FROM give_away INNER JOIN orders ON o.id_orders = ga.id_order INNER JOIN payments ON o.id_orders = p.id_orders_p WHERE pay_way = 'transfer')
-		END 'PAYMENT DEADLINE DATE',
-ga.give_away_date AS 'PRODUCT GIVE AWAY DATE',
-c.first_name AS 'CUSTOMER FIRST NAME' ,
-c.last_name AS 'CUSTOMER LAST NAME'
+CREATE VIEW payments_status </br>
+AS </br>
+SELECT o.id_orders AS 'ORDER_ID',  </br>
+o.order_date AS 'DATE OF ORDER' , </br>
+p.pay_way AS 'PAY WAY CHOOSEN BY CUSTOMER',  </br>
+	CASE  </br>
+		WHEN pay_way = 'cash' THEN (SELECT order_date FROM orders INNER JOIN payments ON p.id_orders_p = o.id_orders WHERE pay_way = 'cash')  </br>
+		ELSE (SELECT DATEADD(DD, 7, give_away_date) FROM give_away INNER JOIN orders ON o.id_orders = ga.id_order INNER JOIN payments ON o.id_orders = p.id_orders_p WHERE pay_way = 'transfer') </br>
+		END 'PAYMENT DEADLINE DATE', </br>
+ga.give_away_date AS 'PRODUCT GIVE AWAY DATE', </br>
+c.first_name AS 'CUSTOMER FIRST NAME' , </br>
+c.last_name AS 'CUSTOMER LAST NAME' </br>
 
-FROM orders o
-	INNER JOIN customers c
-		ON o.id_customer = c.id_customers
-	INNER JOIN give_away ga
-		ON o.id_orders = ga.id_order
-	INNER JOIN payments p
-		ON o.id_orders = p.id_orders_p
+FROM orders o </br>
+	INNER JOIN customers c </br>
+		ON o.id_customer = c.id_customers </br>
+	INNER JOIN give_away ga </br>
+		ON o.id_orders = ga.id_order </br>
+	INNER JOIN payments p </br>
+		ON o.id_orders = p.id_orders_p </br>
