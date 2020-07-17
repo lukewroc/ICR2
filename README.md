@@ -93,29 +93,8 @@ Assumptions: </br>
     <td>int, FK</td>
   </tr>
  </table>
-
-### 3.3 tb_ </br>
-
-<table>
-  <tr>
-    <th> Column Name </th>
-    <th>Data Type </th>
-    </tr>
-  <tr>
-    <td>id_orders</td>
-    <td>int, PK</td>
-  </tr>
-  <tr>
-    <td>id_customer</td>
-    <td>int, FK</td>
-  </tr>
-  <tr>
-    <td>order_date</td>
-    <td>int</td>
-  </tr>
- </table>
   
- ### 3.4 tb_order_details </br>
+ ### 3.3 tb_order_details </br>
  
  <table>
   <tr>
@@ -140,7 +119,7 @@ Assumptions: </br>
   </tr>
  </table>
   
-### 3.5 tb_employees </br>
+### 3.4 tb_employees </br>
  
  <table>
   <tr>
@@ -161,7 +140,7 @@ Assumptions: </br>
   </tr>
  </table>
   
-  ### 3.6 tb_product </br>
+  ### 3.5 tb_product </br>
  
  <table>
   <tr>
@@ -186,6 +165,85 @@ Assumptions: </br>
   </tr>
  </table>
   
+  ### 3.6 tb_give_away </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_ga</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>id_order</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>gave_away_quantity</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>id_product</td>
+    <td>int, FK</td>
+  </tr>
+ </table>
+      
+   ### 3.7 tb_printers </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_printers</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>printer_name</td>
+    <td>varchar(255)</td>
+  </tr>
+  <tr>
+    <td>id_product_p</td>
+    <td>int, FK</td>
+  </tr>
+ </table>
+  
+   ### 3.8 tb_payments </br>
+ 
+ <table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_payments</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>id_customer_p</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>id_orders_p</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>total_cost</td>
+    <td>money</td>
+  </tr>
+  <tr>
+    <td>pay_date</td>
+    <td>datetime</td>
+  </tr>
+  <tr>
+    <td>pay_way</td>
+    <td>varchar(10)</td>
+  </tr>
+ </table>
+    
   
 ## Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
