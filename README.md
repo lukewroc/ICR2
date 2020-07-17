@@ -243,7 +243,92 @@ Assumptions: </br>
     <td>varchar(10)</td>
   </tr>
  </table>
-    
   
-## Main database relations diagram 
+  ## 4. SQL code for database structure
+  
+### 4.1 tb_customers </br>
+
+CREATE TABLE customers 
+(
+id_customers int IDENTITY(1,1) PRIMARY KEY, 
+first_name varchar(255), 
+last_name varchar(255), 
+city varchar(100), 
+street varchar(100), 
+street_number int, 
+apartment_number int
+)
+
+### 4.2 tb_orders </br>
+
+CREATE TABLE orders 
+(
+id_orders int IDENTITY(1,1) PRIMARY KEY,
+id_customer int FOREIGN KEY REFERENCES customers(id_customers), 
+order_date DATETIME, 
+id_recipient_of_order int FOREIGN KEY REFERENCES employees(id_employees)
+)
+
+### 4.3 tb_order_details </br>
+
+CREATE TABLE order_details 
+(
+id_order int FOREIGN KEY REFERENCES orders(id_orders), 
+id_order_details int IDENTITY(1,1) PRIMARY KEY, 
+cartridge_quantity int CHECK(cartridge_quantity>0), 
+id_product_d int FOREIGN KEY REFERENCES product(id_products)
+)
+
+### 4.4 tb_employees </br>
+
+CREATE TABLE employees 
+(
+id_employees int IDENTITY(1,1) PRIMARY KEY, 
+e_first_name varchar(50),
+e_last_name VARCHAR(50)
+)
+
+### 4.5 tb_product </br>
+
+CREATE TABLE product 
+(
+id_products int IDENTITY(1,1) PRIMARY KEY, 
+product_code varchar(30), 
+ink_color varchar(30), 
+price_pcs MONEY
+)
+
+### 4.6 tb_give_away </br>
+
+CREATE TABLE give_away 
+(
+id_ga int IDENTITY(1,1) PRIMARY KEY, 
+id_order int FOREIGN KEY REFERENCES orders(id_orders), 
+gave_away_quantity int, 
+id_product int FOREIGN KEY REFERENCES product(id_products), 
+gave_away_date DATETIME
+)
+
+### 4.7 tb_printers </br>
+
+CREATE TABLE printers 
+(
+id_printers int IDENTITY(1,1) PRIMARY KEY, 
+printer_name varchar(255), 
+id_product_p int FOREIGN KEY REFERENCES product(id_products)
+)
+
+### 4.8 tb_payments </br>
+
+CREATE TABLE payments 
+(
+id_payments int IDENTITY(1,1) PRIMARY KEY, 
+id_customer_p int FOREIGN KEY REFERENCES customers(id_customers),
+id_orders_p int FOREIGN KEY REFERENCES orders(id_orders), 
+total_cost MONEY, 
+pay_date DATETIME, 
+pay_way VARCHAR(10)
+)
+  
+## 5. Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
