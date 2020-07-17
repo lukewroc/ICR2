@@ -19,17 +19,17 @@ Assumptions: </br>
 
 - <i>tb_orders:</i> the table contains data on the date of placing the order, id of the employee accepting the order and the id of the customer placing the order. </br>
 
-- <i>tb_order_details:</i>the table contains data such as order id, quantity and type of product to be regenerated. </br>
+- <i>tb_order_details:</i> the table contains data such as order id, quantity and type of product to be regenerated. </br>
 
-- <i>tb_employees:</i>the table contains the first name, surname and id of a given employee. </br> 
+- <i>tb_employees:</i> the table contains the first name, surname and id of a given employee. </br> 
 
-- <i>tb_product:</i>the table contains the product type, ink color, unit price for the regeneration of a given type of ink cartridge. </br>
+- <i>tb_product:</i> the table contains the product type, ink color, unit price for the regeneration of a given type of ink cartridge. </br>
 
-- <i>tb_give_away:</i>the table contains data on the date of give away of the regenerated ink cartridges, the number of cartridges gaven away and the id of the order to which the give away service relates. </br>
+- <i>tb_give_away:</i> the table contains data on the date of give away of the regenerated ink cartridges, the number of cartridges gaven away and the id of the order to which the give away service relates. </br>
 
-- <i>tb_printers:</i>the table contains data on the types of printers that support a given type of cartridge. </br>
+- <i>tb_printers:</i> the table contains data on the types of printers that support a given type of cartridge. </br>
 
-- <i>tb_payments:</i>the table contains data on the customer to whom the payment relates, order id, date of payment and its value, as well as the type of payment selected by the customer. </br>
+- <i>tb_payments:</i> the table contains data on the customer to whom the payment relates, order id, date of payment and its value, as well as the type of payment selected by the customer. </br>
 
 ## 3. Columns in a table and their data types </br>
 
@@ -42,7 +42,7 @@ Assumptions: </br>
     </tr>
   <tr>
     <td>id_customers</td>
-    <td>int</td>
+    <td>int, PK</td>
   </tr>
   <tr>
     <td>first_name</td>
@@ -68,6 +68,28 @@ Assumptions: </br>
   <td>int</td>
   </tr>
   </table> 
+
+### 3.2 tb_customers </br>
+
+<table>
+  <tr>
+    <th> Column Name </th>
+    <th>Data Type </th>
+    </tr>
+  <tr>
+    <td>id_orders</td>
+    <td>int, PK</td>
+  </tr>
+  <tr>
+    <td>id_customer</td>
+    <td>int, FK</td>
+  </tr>
+  <tr>
+    <td>order_date</td>
+    <td>int</td>
+  </tr>
+ </table>
+  
 
 ## Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
