@@ -2,6 +2,7 @@
 Project of ink cartridge regeneration service database, which is built on Microsoft SQL Server 2014.  </br> 
 ### 1.1 Database description </br> 
 The project is a relational database written for Microsoft SQL Server 2014, which contains <i>8 tables</i> related to the activity of <b>ink cartridge regeneration service.</b></br> The service is the regeneration of selected original HP ink cartridges. The database contains information about the customer who places the order, the order and its details, order give away and payment.</br>
+
 The database provides access to data on: </br>
 - customer data </br>
 - data on the subject of the order placed </br>
