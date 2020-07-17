@@ -271,64 +271,64 @@ id_recipient_of_order int FOREIGN KEY REFERENCES employees(id_employees)</br>
 
 ### 4.3 tb_order_details </br>
 
-CREATE TABLE order_details 
-(
-id_order int FOREIGN KEY REFERENCES orders(id_orders), 
-id_order_details int IDENTITY(1,1) PRIMARY KEY, 
-cartridge_quantity int CHECK(cartridge_quantity>0), 
-id_product_d int FOREIGN KEY REFERENCES product(id_products)
-)
+CREATE TABLE order_details </br>
+(</br>
+id_order int FOREIGN KEY REFERENCES orders(id_orders), </br>
+id_order_details int IDENTITY(1,1) PRIMARY KEY, </br>
+cartridge_quantity int CHECK(cartridge_quantity>0), </br>
+id_product_d int FOREIGN KEY REFERENCES product(id_products)</br>
+)</br>
 
 ### 4.4 tb_employees </br>
 
-CREATE TABLE employees 
-(
-id_employees int IDENTITY(1,1) PRIMARY KEY, 
-e_first_name varchar(50),
-e_last_name VARCHAR(50)
-)
+CREATE TABLE employees </br>
+(</br>
+id_employees int IDENTITY(1,1) PRIMARY KEY, </br>
+e_first_name varchar(50),</br>
+e_last_name VARCHAR(50)</br>
+)</br>
 
 ### 4.5 tb_product </br>
 
-CREATE TABLE product 
-(
-id_products int IDENTITY(1,1) PRIMARY KEY, 
-product_code varchar(30), 
-ink_color varchar(30), 
-price_pcs MONEY
-)
+CREATE TABLE product </br>
+(</br>
+id_products int IDENTITY(1,1) PRIMARY KEY, </br>
+product_code varchar(30), </br>
+ink_color varchar(30), </br>
+price_pcs MONEY</br>
+)</br>
 
 ### 4.6 tb_give_away </br>
 
-CREATE TABLE give_away 
-(
-id_ga int IDENTITY(1,1) PRIMARY KEY, 
-id_order int FOREIGN KEY REFERENCES orders(id_orders), 
-gave_away_quantity int, 
-id_product int FOREIGN KEY REFERENCES product(id_products), 
-gave_away_date DATETIME
-)
+CREATE TABLE give_away </br>
+(</br>
+id_ga int IDENTITY(1,1) PRIMARY KEY, </br>
+id_order int FOREIGN KEY REFERENCES orders(id_orders), </br>
+gave_away_quantity int, </br>
+id_product int FOREIGN KEY REFERENCES product(id_products), </br>
+gave_away_date DATETIME</br>
+)</br>
 
 ### 4.7 tb_printers </br>
 
-CREATE TABLE printers 
-(
-id_printers int IDENTITY(1,1) PRIMARY KEY, 
-printer_name varchar(255), 
-id_product_p int FOREIGN KEY REFERENCES product(id_products)
-)
+CREATE TABLE printers </br>
+(</br>
+id_printers int IDENTITY(1,1) PRIMARY KEY, </br>
+printer_name varchar(255), </br>
+id_product_p int FOREIGN KEY REFERENCES product(id_products)</br>
+)</br>
 
 ### 4.8 tb_payments </br>
 
-CREATE TABLE payments 
-(
-id_payments int IDENTITY(1,1) PRIMARY KEY, 
-id_customer_p int FOREIGN KEY REFERENCES customers(id_customers),
-id_orders_p int FOREIGN KEY REFERENCES orders(id_orders), 
-total_cost MONEY, 
-pay_date DATETIME, 
-pay_way VARCHAR(10)
-)
+CREATE TABLE payments </br>
+(</br>
+id_payments int IDENTITY(1,1) PRIMARY KEY, </br>
+id_customer_p int FOREIGN KEY REFERENCES customers(id_customers),</br>
+id_orders_p int FOREIGN KEY REFERENCES orders(id_orders), </br>
+total_cost MONEY, </br>
+pay_date DATETIME, </br>
+pay_way VARCHAR(10)</br>
+)</br>
   
 ## 5. Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
