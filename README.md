@@ -332,3 +332,31 @@ pay_way VARCHAR(10)</br>
   
 ## 5. Main database relations diagram 
 <img src="https://user-images.githubusercontent.com/59047042/87777158-48ded980-c829-11ea-8d0e-dda1280ad530.jpg">
+
+## 6. Views code and description
+
+### 6.1 Payments status
+
+<b>Desribe:</b> the view shows the current payment status for a given order.
+
+<b>Code:</b>
+CREATE VIEW payments_status
+AS
+SELECT o.id_orders AS 'ORDER_ID', 
+o.order_date AS 'DATE OF ORDER' ,
+p.pay_way AS 'PAY WAY CHOOSEN BY CUSTOMER', 
+	CASE 
+		WHEN pay_way = 'cash' THEN (SELECT order_date FROM orders INNER JOIN payments ON p.id_orders_p = o.id_orders WHERE pay_way = 'cash')
+		ELSE (SELECT DATEADD(DD, 7, give_away_date) FROM give_away INNER JOIN orders ON o.id_orders = ga.id_order INNER JOIN payments ON o.id_orders = p.id_orders_p WHERE pay_way = 'transfer')
+		END 'PAYMENT DEADLINE DATE',
+ga.give_away_date AS 'PRODUCT GIVE AWAY DATE',
+c.first_name AS 'CUSTOMER FIRST NAME' ,
+c.last_name AS 'CUSTOMER LAST NAME'
+
+FROM orders o
+	INNER JOIN customers c
+		ON o.id_customer = c.id_customers
+	INNER JOIN give_away ga
+		ON o.id_orders = ga.id_order
+	INNER JOIN payments p
+		ON o.id_orders = p.id_orders_p
