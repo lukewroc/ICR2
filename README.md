@@ -360,3 +360,24 @@ FROM orders o </br>
 		ON o.id_orders = ga.id_order </br>
 	INNER JOIN payments p </br>
 		ON o.id_orders = p.id_orders_p </br>
+		
+		
+## 7. Parameterized scripts
+
+### 7.1 Add some values to tb_orders
+
+BEGIN TRAN 
+
+DECLARE @employee_last_name varchar(50) = 'Niemala'   /* enter your last name  */
+DECLARE @employee_first_name varchar(50) = 'Kinga'    /* enter your first name  */
+DECLARE @date DATETIME = GETDATE()
+DECLARE @employee_id int = (SELECT id_employees FROM employees WHERE e_last_name = @employee_last_name AND e_first_name = @employee_first_name)
+
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)
+VALUES (3, @date, @employee_id)
+
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)
+VALUES (5, @date, @employee_id)
+
+
+COMMIT TRAN 
