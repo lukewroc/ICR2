@@ -374,7 +374,7 @@ DECLARE @date DATETIME = GETDATE() </br>
 DECLARE @employee_id int = (SELECT id_employees </br>FROM employees </br>WHERE e_last_name = @employee_last_name AND e_first_name = @employee_first_name) </br>
 DECLARE @inserts_number int = 0 </br>
 
-INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>     /*first way of adding values into table, separate insert into query*/
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>     /* first way of adding values into table, separate insert into query */
 VALUES (3, @date, @employee_id)</br>
 SELECT @inserts_number = @insert_numbers + @@ROWCOUNT  </br>
 
