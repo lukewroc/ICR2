@@ -368,16 +368,16 @@ FROM orders o </br>
 
 BEGIN TRAN 
 
-DECLARE @employee_last_name varchar(50) = 'Niemala'   /* enter your last name  */
-DECLARE @employee_first_name varchar(50) = 'Kinga'    /* enter your first name  */
-DECLARE @date DATETIME = GETDATE()
-DECLARE @employee_id int = (SELECT id_employees FROM employees WHERE e_last_name = @employee_last_name AND e_first_name = @employee_first_name)
+DECLARE @employee_last_name varchar(50) = 'Niemala'   /* enter your last name  */  </br>
+DECLARE @employee_first_name varchar(50) = 'Kinga'    /* enter your first name  */ </br>
+DECLARE @date DATETIME = GETDATE() </br>
+DECLARE @employee_id int = (SELECT id_employees </br>FROM employees </br>WHERE e_last_name = @employee_last_name AND e_first_name = @employee_first_name) </br>
 
-INSERT INTO orders(id_customer, order_date, id_recipient_of_order)
-VALUES (3, @date, @employee_id)
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>
+VALUES (3, @date, @employee_id)</br>
 
-INSERT INTO orders(id_customer, order_date, id_recipient_of_order)
-VALUES (5, @date, @employee_id)
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>
+VALUES (5, @date, @employee_id)</br>
 
 
 COMMIT TRAN 
