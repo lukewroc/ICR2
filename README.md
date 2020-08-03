@@ -387,16 +387,17 @@ VALUES (1, @date, @employee_id), </br>
 (8, @date, @employee_id) </br>
 SELECT @inserts_number = @insert_numbers + @@ROWCOUNT  </br>
 
-IF </br>
-@inserts_number <> 4 </br>
-BEGIN </br>
-SELECT 'Inserts number IS NOT correct! Check your query.' </br>
-ROLLBACK TRAN </br>
-END </br>
-ELSE  </br>
-BEGIN  </br>
-COMMIT TRAN  </br>
-END  </br>
+IF  </br>
+@inserts_number <> 4	</br>
+BEGIN 	</br>
+PRINT 'Inserts number IS NOT correct! Check your query.'	</br>
+PRINT @inserts_number	</br>
+ROLLBACK TRAN	</br>
+END	</br>
+ELSE 	</br>
+BEGIN	</br>
+COMMIT TRAN	</br>
+END	</br>
 
 ### 8. Examples of query
 
