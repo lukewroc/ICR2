@@ -372,15 +372,31 @@ DECLARE @employee_last_name varchar(50) = 'Niemala'   /* enter your last name  *
 DECLARE @employee_first_name varchar(50) = 'Kinga'    /* enter your first name  */ </br>
 DECLARE @date DATETIME = GETDATE() </br>
 DECLARE @employee_id int = (SELECT id_employees </br>FROM employees </br>WHERE e_last_name = @employee_last_name AND e_first_name = @employee_first_name) </br>
+DECLARE @inserts_number int = 0 </br>
 
-INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>     /*first way of adding values into table, separate insert into query*/
 VALUES (3, @date, @employee_id)</br>
+SELECT @inserts_number = @insert_numbers + @@ROWCOUNT  </br>
 
 INSERT INTO orders(id_customer, order_date, id_recipient_of_order)</br>
 VALUES (5, @date, @employee_id)</br>
+SELECT @inserts_number = @insert_numbers + @@ROWCOUNT </br>
 
+INSERT INTO orders(id_customer, order_date, id_recipient_of_order)   /* second way of adding values into table, one query insert into, multiple values */ </br>
+VALUES (1, @date, @employee_id), </br>
+(8, @date, @employee_id) </br>
+SELECT @inserts_number = @insert_numbers + @@ROWCOUNT  </br>
 
-COMMIT TRAN 
+IF </br>
+@inserts_number <> 4 </br>
+BEGIN </br>
+SELECT 'Inserts number IS NOT correct! Check your query.' </br>
+ROLLBACK TRAN </br>
+END </br>
+ELSE  </br>
+BEGIN  </br>
+COMMIT TRAN  </br>
+END  </br>
 
 ### 8. Examples of query
 
