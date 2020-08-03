@@ -384,12 +384,12 @@ COMMIT TRAN
 
 ### 8. Examples of query
 
-SELECT p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date) as 'year', AVG(p.total_cost) as 'avarage_income [zl]'
-FROM payments p
-	INNER JOIN customers c
-		ON p.id_customer_p = c.id_customers
-	INNER JOIN orders o
-		ON p.id_customer_p = o.id_customer
-GROUP BY p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date)
-ORDER BY AVG(p.total_cost) DESC
+SELECT p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date) as 'year', AVG(p.total_cost) as 'avarage_income [zl]' </br>
+FROM payments p </br>
+	INNER JOIN customers c </br>
+		ON p.id_customer_p = c.id_customers </br>
+	INNER JOIN orders o </br>
+		ON p.id_customer_p = o.id_customer </br>
+GROUP BY p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date) </br>
+ORDER BY AVG(p.total_cost) DESC </br>
 
