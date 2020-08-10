@@ -401,9 +401,9 @@ END	</br>
 
 ### 8. Stored procedures
 
-CREATE PROCEDURE avg_income_p_customer
-AS
-BEGIN
+<p> CREATE PROCEDURE avg_income_p_customer </p>
+<p> AS </p>
+<p> BEGIN </p>
 SELECT p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date) as 'year', AVG(p.total_cost) as 'avarage_income [zl]' </br>
 FROM payments p </br>
 	INNER JOIN customers c </br>
@@ -412,5 +412,5 @@ FROM payments p </br>
 		ON p.id_customer_p = o.id_customer </br>
 GROUP BY p.id_customer_p, c.first_name, c.last_name, YEAR(o.order_date) </br>
 ORDER BY AVG(p.total_cost) DESC </br>
-END
+<p> END </p>
 
